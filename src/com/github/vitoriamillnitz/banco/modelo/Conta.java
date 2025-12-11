@@ -2,7 +2,7 @@ package com.github.vitoriamillnitz.banco.modelo;
 
 import java.util.Objects;
 
-public class Conta {
+public abstract class Conta {
 
     private Pessoa titular; // o titular da com.github.vitoriamillnitz.banco.modelo.Conta é uma instância do tipo com.github.vitoriamillnitz.banco.modelo.Pessoa
     private int agencia;
@@ -10,7 +10,6 @@ public class Conta {
     double saldo;
 
     Conta() {
-
     }
 
     public Conta(Pessoa titular, int agencia, int numero) {
@@ -40,6 +39,8 @@ public class Conta {
     public void sacar(double valor, double taxaSaque) {
         sacar(valor + taxaSaque);
     }
+
+    public abstract void debitarTarifaMensal();
 
     public Pessoa getTitular() {
         return titular;

@@ -1,12 +1,22 @@
 package com.github.vitoriamillnitz.banco.modelo;
 
-public class ContaEspecial extends Conta{
+public class ContaEspecial extends Conta {
 
     private double valorLimite;
 
     public ContaEspecial(Pessoa titular, int agencia, int numero, double valorLimite) {
         super(titular, agencia, numero);
         this.valorLimite = valorLimite;
+    }
+
+ //   @Override
+    public void depositarTarifaMensal() {
+        sacar(20);
+    }
+
+    @Override
+    public void debitarTarifaMensal() {
+
     }
 
     @Override
