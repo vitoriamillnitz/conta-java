@@ -2,7 +2,7 @@ package com.github.vitoriamillnitz.banco.modelo.pagamento;
 
 import com.github.vitoriamillnitz.banco.modelo.Pessoa;
 
-public class Boleto implements DocumentoPagavel {
+public class Boleto implements DocumentoPagavel, DocumentoEstornavel {
 
     private Pessoa beneficiario;
     private double valor;
@@ -21,6 +21,11 @@ public class Boleto implements DocumentoPagavel {
     @Override
     public boolean estaPago() {
         return pago;
+    }
+
+    @Override
+    public void estornarPagamento() {
+        pago = false;
     }
 
     @Override
